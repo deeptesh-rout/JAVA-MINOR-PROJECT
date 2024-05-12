@@ -1,0 +1,94 @@
+Membership Database System
+
+This Java program implements a membership database system for clubs, allowing efficient management of member records. The system consists of three main classes: Member, Date, and Main.
+Member Class: This class represents a club member and encapsulates member attributes such as ID, name, handicap, gender, team, member type, coach, phone number, and join date. It provides methods to set and retrieve member details, as well as a display method to showcase member information.
+Date Class: The Date class defines a custom date object to manage date-related functionalities within the system. It includes attributes for day, month, and year, along with methods to compare dates and convert month names to numbers.
+Main Class: The Main class serves as the entry point for the program and orchestrates database operations. It initializes an array of Member objects with sample data and demonstrates various functionalities, including displaying all members, filtering records based on specific criteria (such as join date, handicap, and team), and presenting the results.
+The program is designed to showcase object-oriented programming principles, including encapsulation, inheritance, and polymorphism. It demonstrates the effective use of data structures and algorithms to manage member data efficiently. Overall, this membership database system provides a versatile and user-friendly solution for clubs seeking to streamline their membership management processes.
+
+
+ULM DIAGRAM
+
+
+/* _______________________
+|        <<Class>>         |
+|__________________________|
+|         Date             |
+|--------------------------|
+| - day: int               |
+| - month: String          |
+| - year: int              |
+|--------------------------|
+| + Date(int, String, int) |
+| + getDay(): int          |
+| + getMonth(): String     |
+| + getYear(): int         |
+| + toString(): String     |
+|__________________________|
+
+
+ ___________________________________________________________________________
+|        <<Class>>                                                          |
+|___________________________________________________________________________|
+|        Member                                                             |
+|---------------------------------------------------------------------------|
+| - MemberID: int                                                           |
+| - LastName: String                                                        |
+| - FirstName: String                                                       |
+| - Handicap: int                                                           |
+| - Gender: char                                                            |
+| - Team: String                                                            |
+| - MemberType: String                                                      |
+| - Coach: int                                                              |
+| - Phone: long                                                             |
+| - JoinDate: Date                                                          |
+|---------------------------------------------------------------------------|
+| + Member(int, String, String, int, char, String, String, int, long, Date) |
+| + display(): void                                                         |
+| + getJoinDate(): Date                                                     |
+| + getHandicap(): int                                                      |
+| + getGender(): char                                                       |
+| + getTeam(): String                                                       |
+| + getMemberType(): String                                                 |
+|___________________________________________________________________________|
+
+
+ __________________________________
+|        <<Class>>                |
+|_________________________________|
+|          Main                   |
+|---------------------------------|
+| + main(String[]): void          |
+| - isBefore(Date, Date): boolean |
+|_________________________________|
+ */
+
+
+
+
+
+
+
+Here are a few observations and suggestions:
+
+Encapsulation: You've properly encapsulated the fields in the Member class by making them private and providing getter methods. This helps in maintaining the class's integrity.
+
+Naming Conventions: In Java, it's a convention to use camelCase for variable names. So, instead of MemberID, LastName, etc., it's recommended to use memberID, lastName, etc. This doesn't affect functionality but improves code readability.
+
+String Comparison: When comparing strings in Java, it's better to use the equals() method instead of the == operator. So, instead of member.getGender() == 'F', you can use member.getGender().equals("F").
+
+Comparing Dates: Your isBefore method seems to work fine for comparing dates. However, Java provides the compareTo method for comparing Date objects. You might consider using that for simplicity and readability.
+
+Static Utility Method: You've implemented isBefore as a separate method, which is good for reusability. Consider making it a static method in the Date class or a separate utility class.
+
+Error Handling: Your current implementation assumes valid input for dates (e.g., valid months). Consider adding error handling for invalid dates or months to make the code more robust.
+
+Overall, your code accomplishes its tasks effectively. If you're looking to extend or modify it further, these suggestions might be helpful.
+
+
+
+
+
+
+
+
